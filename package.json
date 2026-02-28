@@ -1,0 +1,16 @@
+{
+  "name": "dhan-check-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "setup": "cd ai_engine && pip install -r requirements.txt && cd ../blockchain && npm install && cd ../frontend && npm install",
+    "dev:ai": "cd ai_engine && uvicorn main:app --reload --host 0.0.0.0 --port 8000",
+    "dev:blockchain": "cd blockchain && npx hardhat node",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:ai\" \"npm run dev:blockchain\" \"npm run dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+

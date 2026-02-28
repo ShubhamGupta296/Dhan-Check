@@ -1,0 +1,4 @@
+{
+  "/page": "app/page.js",
+  "/ngo-verify/page": "app/ngo-verify/page.js"
+}

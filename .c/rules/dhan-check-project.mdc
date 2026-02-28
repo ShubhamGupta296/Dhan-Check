@@ -1,0 +1,25 @@
+---
+description: Core Dhan-Check project overview and architecture guardrails
+alwaysApply: true
+---
+
+# Dhan-Check Project Rules
+
+## Project Overview
+
+A decentralized "Proof-of-Donation" platform that uses AI to verify NGO impact before releasing milestone-based funds via smart contracts.
+
+## Tech Stack
+
+- **Frontend**: Next.js, Tailwind CSS, Ethers.js.
+- **AI Backend**: FastAPI, PyTorch, YOLOv10 for object detection.
+- **Blockchain**: Solidity, Hardhat, Polygon Network.
+- **Storage**: IPFS for decentralized image hosting.
+
+## Architecture Guidelines
+
+- **AI engine location**: Keep AI models and inference logic in the `/ai_engine` directory.
+- **Blockchain location**: Keep smart contracts and deployment scripts in the `/blockchain` directory.
+- **Agentic AI behavior**: The AI should not only output counts or labels; it must generate and sign a cryptographic **verification proof** that can be consumed on-chain by the smart contracts.
+- **Proof-of-Donation flow**: Design features so that funds are released only after the on-chain contract verifies the AI-generated proof against required milestones.
+
